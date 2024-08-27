@@ -1,0 +1,11 @@
+source leaprc.DNA.bsc1            # Load the DNA force field
+
+# Define the sequence
+dna = sequence { DC5 DG DC DG DA DA DT DT DA DG DC DG DC3 }
+
+# Save the structure as a PDB file
+savepdb dna dna_structure.pdb
+saveamberparm dna dna_structure.prmtop dna_structure.inpcrd
+
+quit  # Exit tleap
+
