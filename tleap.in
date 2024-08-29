@@ -8,7 +8,8 @@ strand2 = sequence { DT5 DC DC DC DA DA DT DC DC DC DA DA DT DC DC DC DA DA DT D
 
 # Combine the two strands into a double-stranded DNA
 dna = combine { strand1 strand2 }
-# Optional: Solvate with a water box to stabilize the structure
+
+# Define the solvent (water box)
 solvateBox dna TIP3PBOX 10.0
 
 # Save the structure as a PDB file
