@@ -13,7 +13,6 @@ dna = combine { strand1 strand2 }
 solvent = loadamberparams frcmod.tip3p
 
 # Solvate the DNA molecule with a water box
-solvateBox dna TIP3PBOX 10.0
 
 # Save the structure as a PDB file
 savepdb dna agggtt_dna_double_helix.pdb
