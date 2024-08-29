@@ -1,21 +1,14 @@
 source leaprc.DNA.bsc1  # Load the DNA force field
 
-# Define the first strand (strand1)
+# Define the single strand (strand1)
 strand1 = sequence { DA5 DG DG DG DT DT DA DG DG DG DT DT DA DG DG DG DT DT DA DG DG DG DT DT DA3 }
 
-# Define the complementary strand (strand2)
-strand2 = sequence { DT5 DC DC DC DA DA DT DC DC DC DA DA DT DC DC DC DA DA DT DC DC DC DA DA DT3 }
+# Optional: Solvate the single strand with a water box (to stabilize the structure)
+# solvateBox strand1 TIP3PBOX 10.0
 
-# Combine the two strands into a double-stranded DNA
-dna = combine { strand1 strand2 }
-
-# Define the solvent model
-solvent = loadamberparams frcmod.tip3p
-
-# Solvate the DNA molecule with a water box
-
-# Save the structure as a PDB file
-savepdb dna agggtt_dna_double_helix.pdb
-saveamberparm dna agggtt_dna_double_helix.prmtop agggtt_dna_double_helix.inpcrd
+# Save the single strand structure as a PDB file
+savepdb strand1 agggtt_single_strand.pdb
+saveamberparm strand1 agggtt_single_strand.prmtop agggtt_single_strand.inpcrd
 
 quit  # Exit tleap
+
