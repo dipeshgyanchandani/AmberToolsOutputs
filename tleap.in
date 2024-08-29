@@ -9,7 +9,10 @@ strand2 = sequence { DT5 DC DC DC DA DA DT DC DC DC DA DA DT DC DC DC DA DA DT D
 # Combine the two strands into a double-stranded DNA
 dna = combine { strand1 strand2 }
 
-# Define the solvent (water box)
+# Define the solvent model
+solvent = loadamberparams frcmod.tip3p
+
+# Solvate the DNA molecule with a water box
 solvateBox dna TIP3PBOX 10.0
 
 # Save the structure as a PDB file
